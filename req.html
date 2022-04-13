@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <button>값 가져오기</button>
+    <p></p>
+<body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function ajaxTest(){
+    $.ajax({
+        url: "data.json",
+        dataType: "json", //url에 있는 데이터들을 다 json형식으로 바꾼다
+        success: function(datas){
+            console.log(datas);
+            $("p").text(datas.name);
+        }
+    });
+}
+    $("button").click(function(){
+        ajaxTest();
+    })
+</script>
+</body>
+</html>
